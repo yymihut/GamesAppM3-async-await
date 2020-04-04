@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Games app2</title>
+
+</head>
+
+<body>
+
+    <form class="creationForm" action="" method="POST">
+        <label for="gameTitle">Title *</label> <!-- * sunt obligatorii de introdus -->
+        <input type="text" value="" name="gameTitle" id="gameTitle" />
+
+        <label for="gameDescription">Game description</label>
+        <textarea name="gameDescription" id="gameDescription"></textarea>
+
+        <label for="gameGenre">Genere *</label>
+        <select name="gameGenre" id="gameGenre">
+            <option value="">....</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+        </select>
+
+        <label for="gamePublisher">Publisher</label>
+        <input type="text" name="gamePublisher" id="gamePublisher" />
+
+        <label for="gameImageUrl">ImageUrl *</label>
+        <input type="text" name="gameImageUrl" id="gameImageUrl" />
+
+        <label for="gameRelease">GameRelease</label>
+        <input type="text" name="gameRelease" id="gameRelease" />
+        <div class="action">
+            <button id="submit" type="button" class="btn btn-primary">Create Game</button>
+            <button id="refresh" type="button" class="btn btn-primary">Refresh Games</button>
+        </div>        
+
+    </form><!-- 1333929600 -->
+    <div class="modal fade" id="">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Update Game</h3>
+                </div>
+                <div class="modal-body">
+                    <label for="gameTitle">Title *</label>
+                    <input type="text" value="" name="gameTitle" id="modalGameTitle" />
+
+                    <label for="gameDescription">Game description</label>
+                    <textarea name="gameDescription" value="" id="modalGameDescription"></textarea>
+
+                    <label for="gameImageUrl">ImageUrl *</label>
+                    <input type="text" value="" name="gameImageUrl" id="modalGameImageUrl" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="save btn btn-default" data-dismiss="modal" >Save Changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Are u sure you want to delete this game ?</h3>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" >Yes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul id="posts"></ul>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="model-async.js"></script>
+    <script src="view-async.js"></script>    
+</body>
+
+</html>
