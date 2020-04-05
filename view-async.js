@@ -101,8 +101,8 @@ submitBtn.addEventListener("click", function (event) {
     validateTextOnly(gamePublisher, "Please enter a valid Publisher");
     validateGameImageUrl(gameImageUrl, "The image URL is required!, provide a valid one pls !");
     validateReleaseTimestampElement(gameRelease, "The release date you provided is not a valid timestamp!");
-
-    if (gameTitle.value !== "" && gameGenre.value !== "" && gameImageUrl.value !== "" && gameRelease.value !== "") {
+    let checkForSpan = !(document.querySelector('form > span'));
+    if (checkForSpan && gameTitle.value !== "" && gameGenre.value !== "" && gameImageUrl.value !== "" && gameRelease.value !== "") {
 
         let urlencoded = new URLSearchParams();
         urlencoded.append("title", gameTitle.value);
