@@ -1,29 +1,30 @@
 let apiUrl = "https://games-world.herokuapp.com"
 
-function sendRequest(method, url, data) {
-    return fetch(url, {
-        method: method,
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: data
-    }).then(response => {
+async function sendRequest(method, url, data) {
+    try {
+        const response = await fetch(url, {
+            method: method,
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: data
+        })
         if (response.status >= 200 && response.status < 300) {
-           if (method == 'GET'|| method == 'PUT' || method == 'POST'){
-               return response.json();
-           } else if (method == 'DELETE'){
-               return response.text();
-           }            
+            if (method == 'GET' || method == 'PUT' || method == 'POST') {
+                return response.json();
+            } else if (method == 'DELETE') {
+                return response.text();
+            }
         } else {
             return response.json().then(errData => {
                 console.log(errData);
                 throw new Error('Something went wrong - server-side.');
             });
         }
-    }).catch(error => {
+    } catch (error) {
         console.log(error);
         throw new Error('Something went wrong!');
-    });
+    }
 }
 
 async function createDomElements() {
